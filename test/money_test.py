@@ -7,6 +7,9 @@ from tdd_by_python.doller import Doller
 TODO
 $5 * 10CHF = $5
 $5 * 2 = $10
+amount を privateにする
+Dollerの副作用どうする？
+Moneyの丸め込みをどうする？
 """
 
 class MoneyTest(TestCase):
