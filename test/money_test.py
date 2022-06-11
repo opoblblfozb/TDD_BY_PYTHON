@@ -10,6 +10,8 @@ amount を privateにする
 Moneyの丸め込みをどうする？
 equals()
 hashCode()
+nullとの等価性比較
+他のオブジェクトとの等価性比較
 """
 
 class MoneyTest(TestCase):
