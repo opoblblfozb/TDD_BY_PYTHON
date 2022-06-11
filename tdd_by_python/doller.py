@@ -1,6 +1,6 @@
 class Doller:
-    def __init__(self, mount):
-        self.amount = 10
+    def __init__(self, amount):
+        ...
 
     def times(self, multiplier):
-        ...
+        self.amount = 5 * 2
