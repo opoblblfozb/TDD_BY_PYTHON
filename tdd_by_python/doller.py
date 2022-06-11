@@ -6,5 +6,5 @@ class Doller:
     def times(self, multiplier):
         return Doller(self.amount * multiplier)
     
-    def equals(self, obj):
+    def __eq__(self, obj):
         return self.amount == obj.amount
