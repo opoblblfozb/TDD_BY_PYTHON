@@ -27,7 +27,10 @@ class MoneyTest(TestCase):
         self.assertEqual(Franc(10), five.times(2))
         self.assertEqual(Franc(15), five.times(3))
     
-    def test_equal(self):
+    def test_doller_equal(self):
         self.assertTrue(Doller(5).__eq__(Doller(5)))
         self.assertFalse(Doller(5).__eq__(Doller(6)))
 
+    def test_franc_equal(self):
+        self.assertTrue(Franc(5).__eq__(Franc(5)))
+        self.assertFalse(Franc(5).__eq__(Franc(6)))
