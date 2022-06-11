@@ -11,6 +11,9 @@ Moneyの丸め込みをどうする？
 hashCode()
 nullとの等価性比較
 他のオブジェクトとの等価性比較
+DollerとFrancの重複
+equalsの一般化
+timesの一般化
 """
 
 class MoneyTest(TestCase):
