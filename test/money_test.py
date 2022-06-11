@@ -22,3 +22,4 @@ class MoneyTest(TestCase):
     
     def test_equal(self):
         self.assertTrue(Doller(5).equals(Doller(5)))
+        self.assertFalse(Doller(5).equals(Doller(6)))
