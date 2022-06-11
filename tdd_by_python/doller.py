@@ -1,10 +1,10 @@
 
 class Doller:
     def __init__(self, amount):
-        self.amount = amount
+        self.__amount = amount
 
     def times(self, multiplier):
-        return Doller(self.amount * multiplier)
+        return Doller(self.__amount * multiplier)
     
     def __eq__(self, obj):
-        return self.amount == obj.amount
+        return self.__amount == obj.__amount
