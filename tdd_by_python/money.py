@@ -1,3 +1,5 @@
+class Money:
+    ...
 
 class Doller:
     def __init__(self, amount):
