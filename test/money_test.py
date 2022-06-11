@@ -17,10 +17,8 @@ nullとの等価性比較
 class MoneyTest(TestCase):
     def test_multiplication(self):
         five = Doller(5)
-        product: Doller = five.times(2)
-        self.assertEqual(10, product.amount)
-        product: Doller = five.times(3)
-        self.assertEqual(15, product.amount)
+        self.assertEqual(Doller(10), five.times(2))
+        self.assertEqual(Doller(15), five.times(3))
     
     def test_equal(self):
         self.assertTrue(Doller(5).__eq__(Doller(5)))
