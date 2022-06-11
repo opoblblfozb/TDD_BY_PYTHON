@@ -8,6 +8,8 @@ TODO
 $5 * 10CHF = $5
 amount を privateにする
 Moneyの丸め込みをどうする？
+equals()
+hashCode()
 """
 
 class MoneyTest(TestCase):
@@ -17,3 +19,6 @@ class MoneyTest(TestCase):
         self.assertEqual(10, product.amount)
         product: Doller = five.times(3)
         self.assertEqual(15, product.amount)
+    
+    def test_equal(self):
+        self.assertTrue(Doller(5).equals(Doller(5)))
