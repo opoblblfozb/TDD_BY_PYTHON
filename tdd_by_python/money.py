@@ -8,6 +8,10 @@ class Money:
             and self.__class__.__name__ == obj.__class__.__name__
         )
 
+    @staticmethod
+    def doller(amount):
+        return Doller(amount)
+
 
 class Doller(Money):
     def times(self, multiplier):
