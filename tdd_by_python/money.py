@@ -1,7 +1,4 @@
-from abc import ABCMeta, abstractmethod
-
-
-class Money(metaclass=ABCMeta):
+class Money:
     def __init__(self, amount, currency):
         self._amount = amount
         self._currency = currency
@@ -20,7 +17,6 @@ class Money(metaclass=ABCMeta):
     def franc(amount):
         return Franc(amount, "CHF")
 
-    @abstractmethod
     def times(self, multiplier):
         raise NotImplementedError
 
