@@ -4,10 +4,7 @@ class Money:
         self._currency = currency
 
     def __eq__(self, obj):
-        return (
-            self._amount == obj._amount
-            and self.__class__.__name__ == obj.__class__.__name__
-        )
+        return self._amount == obj._amount and self.currency() == obj.currency()
 
     @staticmethod
     def doller(amount):
