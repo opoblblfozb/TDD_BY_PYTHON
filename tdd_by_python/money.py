@@ -28,7 +28,15 @@ class Doller(Money):
     def times(self, multiplier):
         return Doller(self._amount * multiplier)
 
+    @staticmethod
+    def currency():
+        return "USD"
+
 
 class Franc(Money):
     def times(self, multiplier):
         return Franc(self._amount * multiplier)
+
+    @staticmethod
+    def currency():
+        return "CHF"
