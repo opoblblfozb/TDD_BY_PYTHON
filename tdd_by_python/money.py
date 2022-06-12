@@ -2,8 +2,9 @@ from abc import ABCMeta, abstractmethod
 
 
 class Money(metaclass=ABCMeta):
-    def __init__(self, amount):
+    def __init__(self, amount, currency):
         self._amount = amount
+        self._currency = currency
 
     def __eq__(self, obj):
         return (
@@ -13,30 +14,25 @@ class Money(metaclass=ABCMeta):
 
     @staticmethod
     def doller(amount):
-        return Doller(amount)
+        return Doller(amount, "USD")
 
     @staticmethod
     def franc(amount):
-        return Franc(amount)
+        return Franc(amount, "CHF")
 
     @abstractmethod
     def times(self, multiplier):
         raise NotImplementedError
 
+    def currency(self):
+        return self._currency
+
 
 class Doller(Money):
     def times(self, multiplier):
-        return Doller(self._amount * multiplier)
-
-    @staticmethod
-    def currency():
-        return "USD"
+        return Doller(self._amount * multiplier, "USD")
 
 
 class Franc(Money):
     def times(self, multiplier):
-        return Franc(self._amount * multiplier)
-
-    @staticmethod
-    def currency():
-        return "CHF"
+        return Franc(self._amount * multiplier, "CHF")
