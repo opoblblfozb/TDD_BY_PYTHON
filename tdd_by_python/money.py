@@ -15,17 +15,15 @@ class Money:
         return Franc(amount, "CHF")
 
     def times(self, multiplier):
-        raise NotImplementedError
+        return Money(self._amount * multiplier, self._currency)
 
     def currency(self):
         return self._currency
 
 
 class Doller(Money):
-    def times(self, multiplier):
-        return Money(self._amount * multiplier, self._currency)
+    ...
 
 
 class Franc(Money):
-    def times(self, multiplier):
-        return Money(self._amount * multiplier, self._currency)
+    ...
