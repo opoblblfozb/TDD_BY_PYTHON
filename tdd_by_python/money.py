@@ -30,9 +30,9 @@ class Money(metaclass=ABCMeta):
 
 class Doller(Money):
     def times(self, multiplier):
-        return Money.doller(self._amount * multiplier)
+        return Doller(self._amount * multiplier, "USD")
 
 
 class Franc(Money):
     def times(self, multiplier):
-        return Money.franc(self._amount * multiplier)
+        return Franc(self._amount * multiplier, "CHF")
