@@ -28,6 +28,6 @@ class Money(Expression):
 
 
 class Sum(Expression):
-    def __init__(self, augend, addend):
+    def __init__(self, augend: Money, addend: Money):
         self.augend = augend
         self.addend = addend
