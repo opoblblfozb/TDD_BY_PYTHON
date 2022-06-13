@@ -24,4 +24,10 @@ class Money(Expression):
         return self._currency
 
     def plus(self, addend) -> Expression:
-        return Money(self._amount + addend._amount, self.currency())
+        return Sum(self, addend)
+
+
+class Sum(Expression):
+    def __init__(self, augend, addend):
+        self.augend = augend
+        self.addend = addend
