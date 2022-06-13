@@ -8,6 +8,7 @@ from tdd_by_python.money import Money, Sum
 TODO
 $5 + 10CHF = $5
 $5 + $5 = $10
+bank.reduce(Money)
 """
 
 
@@ -44,3 +45,8 @@ class MoneyTest(TestCase):
         bank: Bank = Bank()
         result = bank.reduce(sum, "USD")
         self.assertEqual(Money.doller(7), result)
+
+    def test_reduce_money(self):
+        bank: Bank = Bank()
+        result = bank.reduce(Money.doller(6), "USD")
+        self.assertEqual(Money.doller(6), result)
