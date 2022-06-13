@@ -8,22 +8,14 @@ class Money:
 
     @staticmethod
     def doller(amount):
-        return Doller(amount, "USD")
+        return Money(amount, "USD")
 
     @staticmethod
     def franc(amount):
-        return Franc(amount, "CHF")
+        return Money(amount, "CHF")
 
     def times(self, multiplier):
         return Money(self._amount * multiplier, self._currency)
 
     def currency(self):
         return self._currency
-
-
-class Doller(Money):
-    ...
-
-
-class Franc(Money):
-    ...

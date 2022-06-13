@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from tdd_by_python.money import Doller, Franc, Money
+from tdd_by_python.money import Money
 
 """
 TODO
