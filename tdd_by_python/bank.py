@@ -6,5 +6,4 @@ from .money import Money, Sum
 
 class Bank:
     def reduce(self, source: Expression, to: str) -> Money:
-        sum: Sum = source
-        return sum.reduce(to)
+        return source.reduce((to))
