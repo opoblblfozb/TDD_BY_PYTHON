@@ -5,15 +5,7 @@ from tdd_by_python.money import Money
 """
 TODO
 $5 + 10CHF = $5
-5CHF * 2 = 10CHF
-Moneyの丸め込みをどうする？
-hashCode()
-nullとの等価性比較
-他のオブジェクトとの等価性比較
-DollerとFrancの重複
-equalsの一般化
-timesの一般化
-DollerとFrancの比較
+$5 + $5 = $10
 """
 
 
@@ -31,3 +23,7 @@ class MoneyTest(TestCase):
     def test_currency(self):
         self.assertEqual(Money.doller(5).currency(), "USD")
         self.assertEqual(Money.franc(5).currency(), "CHF")
+
+    def test_simple_addition(self):
+        sum = Money.doller(5).plus(Money.doller(5))
+        self.assertEqual(Money.doller(10), sum)
