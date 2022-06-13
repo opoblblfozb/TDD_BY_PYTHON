@@ -1,5 +1,7 @@
 from unittest import TestCase
 
+from tdd_by_python.bank import Bank
+from tdd_by_python.expression import Expression
 from tdd_by_python.money import Money
 
 """
@@ -29,4 +31,4 @@ class MoneyTest(TestCase):
         sum: Expression = five.plus(five)
         bank: Bank = Bank()
         result = bank.reduce(sum, "USD")
-        self.assertEqual(Money.doller(5), result)
+        self.assertEqual(Money.doller(10), result)
