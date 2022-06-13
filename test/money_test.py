@@ -32,3 +32,9 @@ class MoneyTest(TestCase):
         bank: Bank = Bank()
         result = bank.reduce(sum, "USD")
         self.assertEqual(Money.doller(10), result)
+
+    def test_plus_return_sum(self):
+        five: Money = Money.doller(5)
+        result: Expression = five.plus(Money.doller(5))
+        self.assertEqual(five, result.augend)
+        self.assertEqual(five, result.addend)
