@@ -56,3 +56,11 @@ class MoneyTest(TestCase):
         bank.add_rate("CHF", "USD", 2)
         result: Money = bank.reduce(Money.franc(2), "USD")
         self.assertEqual(Money.doller(1), result)
+
+    def test_mixed_addition(self):
+        bank: Bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        five_bucks = Money.doller(5)
+        ten_franc = Money.franc(10)
+        result = bank.reduce(five_bucks.plus(ten_franc), "USD")
+        self.assertEqual(Money.doller(10), result)
