@@ -47,5 +47,8 @@ class Sum(Expression):
     def plus(self, addend):
         return Sum(self, addend)
 
+    def times(self, multiplier):
+        return Sum(self.augend.times(multiplier), self.addend.times(multiplier))
+
 
 assert Money.reduce.__annotations__ == {"to": "str", "return": "Money"}
