@@ -45,7 +45,7 @@ class Sum(Expression):
         return Money(amount, to)
 
     def plus(self, addend):
-        raise NotImplementedError
+        return Sum(self, addend)
 
 
 assert Money.reduce.__annotations__ == {"to": "str", "return": "Money"}
