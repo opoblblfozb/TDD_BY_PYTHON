@@ -38,8 +38,10 @@ class Sum(Expression):
         self.augend = augend
         self.addend = addend
 
-    def reduce(self, to: str, bank: Bank) -> Money:
-        amount: int = self.augend._amount + self.addend._amount
+    def reduce(self, to: str, bank) -> Money:
+        amount: int = (
+            self.augend.reduce(to, bank)._amount + self.addend.reduce(to, bank)._amount
+        )
         return Money(amount, to)
 
 
