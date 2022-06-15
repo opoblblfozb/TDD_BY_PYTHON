@@ -6,11 +6,16 @@ from .money import Money, Sum
 
 
 class Bank:
+    def __init__(self):
+        self.rate_maps = {}
+
     def reduce(self, source, to: str) -> Money:
         return source.reduce(to, self)
 
     def add_rate(self, _from: str, _to: str, rate: int):
-        ...
+        self.rate_maps[(_from, _to)] = rate
 
     def get_rate(self, _from: str, _to: str):
-        return 2 if _from == "CHF" and _to == "USD" else 1
+        if _from == _to:
+            return 1
+        return self.rate_maps[(_from, _to)]
