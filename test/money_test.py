@@ -50,3 +50,9 @@ class MoneyTest(TestCase):
         bank: Bank = Bank()
         result = bank.reduce(Money.doller(6), "USD")
         self.assertEqual(Money.doller(6), result)
+
+    def test_reduce_money_different_currency(self):
+        bank: Bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        result: Money = bank.reduce(Money.franc(2), "USD")
+        self.assertEqual(Money.doller(1), result)
